@@ -1,0 +1,278 @@
+.breathing-exercise-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.breathing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e1e5eb;
+  padding-bottom: 1rem;
+}
+
+.breathing-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4FBFB9;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #2D3748;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #8A85FF;
+}
+
+.exercise-selection {
+  margin-bottom: 2rem;
+}
+
+.exercise-selection h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #2D3748;
+}
+
+.exercise-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exercise-option {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  background-color: #F8F9FA;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.exercise-option:hover {
+  background-color: #E1E5EB;
+}
+
+.exercise-option.selected {
+  border-color: #8A85FF;
+  background-color: rgba(138, 133, 255, 0.1);
+}
+
+.exercise-option h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #2D3748;
+}
+
+.exercise-option p {
+  font-size: 0.9rem;
+  color: #4A5568;
+}
+
+.exercise-settings {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.setting {
+  flex: 1;
+  min-width: 200px;
+}
+
+.setting label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #4A5568;
+}
+
+.setting input[type="range"],
+.setting select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #E1E5EB;
+}
+
+.breathing-visualization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.breathing-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4FBFB9, #8A85FF);
+  box-shadow: 0 0 30px rgba(79, 191, 185, 0.3);
+}
+
+.breathing-instructions {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 20px;
+}
+
+.breathing-instructions h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2D3748;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #E1E5EB;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4FBFB9;
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
+.breathing-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.start-btn, .stop-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.start-btn {
+  background-color: #4FBFB9;
+  color: white;
+}
+
+.start-btn:hover {
+  background-color: #3A8F8A;
+}
+
+.stop-btn {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+.stop-btn:hover {
+  background-color: #E05252;
+}
+
+.breathing-benefits {
+  background-color: #F8F9FA;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.breathing-benefits h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #2D3748;
+}
+
+.breathing-benefits ul {
+  padding-left: 1.5rem;
+}
+
+.breathing-benefits li {
+  margin-bottom: 0.5rem;
+  color: #4A5568;
+}
+
+/* Dark mode styles */
+.dark .breathing-exercise-container {
+  background-color: #1A202C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .breathing-header h2 {
+  color: #4FBFB9;
+}
+
+.dark .exercise-option h4,
+.dark .breathing-instructions h3,
+.dark .breathing-benefits h3 {
+  color: #E1E5EB;
+}
+
+.dark .exercise-option p,
+.dark .setting label,
+.dark .breathing-benefits li {
+  color: #A0AEC0;
+}
+
+.dark .exercise-option {
+  background-color: #2D3748;
+}
+
+.dark .exercise-option:hover {
+  background-color: #3A4A5E;
+}
+
+.dark .exercise-option.selected {
+  background-color: rgba(138, 133, 255, 0.2);
+}
+
+.dark .progress-bar {
+  background-color: #2D3748;
+}
+
+.dark .breathing-benefits {
+  background-color: #2D3748;
+}
+
+@media (max-width: 768px) {
+  .breathing-exercise-container {
+    padding: 1.5rem;
+  }
+  
+  .exercise-options {
+    flex-direction: column;
+  }
+  
+  .exercise-settings {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .breathing-visualization {
+    height: 250px;
+  }
+  
+  .breathing-circle {
+    width: 120px;
+    height: 120px;
+  }
+}

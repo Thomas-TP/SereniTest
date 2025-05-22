@@ -1,0 +1,118 @@
+.wellness-center-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.wellness-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e1e5eb;
+  padding-bottom: 1rem;
+}
+
+.wellness-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4FBFB9, #8A85FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #2D3748;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #8A85FF;
+}
+
+.wellness-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e1e5eb;
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  background-color: #F8F9FA;
+  color: #4A5568;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  background-color: #E1E5EB;
+}
+
+.tab-btn.active {
+  background-color: #fff;
+  color: #8A85FF;
+  border-bottom: 3px solid #8A85FF;
+}
+
+.wellness-content {
+  min-height: 500px;
+}
+
+/* Dark mode styles */
+.dark .wellness-center-container {
+  background-color: #1A202C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .wellness-header h2 {
+  background: linear-gradient(135deg, #4FBFB9, #8A85FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .tab-btn {
+  background-color: #2D3748;
+  color: #E2E8F0;
+}
+
+.dark .tab-btn:hover {
+  background-color: #3A4A5E;
+}
+
+.dark .tab-btn.active {
+  background-color: #1A202C;
+  color: #8A85FF;
+  border-bottom: 3px solid #8A85FF;
+}
+
+@media (max-width: 768px) {
+  .wellness-center-container {
+    padding: 1.5rem;
+  }
+  
+  .wellness-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tab-btn {
+    border-radius: 8px;
+  }
+}
