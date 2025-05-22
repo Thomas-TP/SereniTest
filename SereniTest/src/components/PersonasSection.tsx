@@ -317,7 +317,7 @@ const PersonasSection: React.FC = () => {
               key={index} 
               name={persona.name} 
               description={persona.description} 
-              image={persona.image}
+              image={persona.image || undefined}
               index={index}
             />
           ))}

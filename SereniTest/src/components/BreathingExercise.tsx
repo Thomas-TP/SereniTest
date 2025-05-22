@@ -64,7 +64,7 @@ const BreathingExercise: React.FC<BreathingExerciseProps> = ({ onClose }) => {
           if (phase === 'inhale' && newCount >= config.inhale) {
             if (config.hold1 > 0) {
               setPhase('hold');
-              setCurrentVoiceGuide(breathingGuides[exerciseType].hold);
+              setCurrentVoiceGuide(breathingGuides[exerciseType]?.hold || breathingGuides[exerciseType].inhale);
             } else {
               setPhase('exhale');
               setCurrentVoiceGuide(breathingGuides[exerciseType].exhale);
@@ -77,7 +77,7 @@ const BreathingExercise: React.FC<BreathingExerciseProps> = ({ onClose }) => {
           } else if (phase === 'exhale' && newCount >= config.exhale) {
             if (config.hold2 > 0) {
               setPhase('rest');
-              setCurrentVoiceGuide(breathingGuides[exerciseType].rest);
+              setCurrentVoiceGuide(breathingGuides[exerciseType]?.rest || breathingGuides[exerciseType].exhale);
               return 0;
             } else {
               // Fin d'un cycle

@@ -13,14 +13,21 @@
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   
-  /* Dark mode variables */
-  --dark-background: #1A202C;
-  --dark-card-background: #2D3748;
-  --dark-text-color: #E2E8F0;
-  --dark-light-text: #A0AEC0;
-  --dark-border-color: #4A5568;
-  --dark-hover-color: #4A5568;
+  /* Dark mode variables - Improved contrast */
+  --dark-background: #121620;
+  --dark-card-background: #1E293B;
+  --dark-text-color: #F8FAFC;
+  --dark-light-text: #CBD5E1;
+  --dark-border-color: #475569;
+  --dark-hover-color: #334155;
   --dark-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --dark-primary-color: #90CAF9;
+  --dark-secondary-color: #82AAFF;
+  --dark-accent-color: #FF7E67;
+  --dark-button-text: #FFFFFF;
+  --dark-button-hover: #2563EB;
+  --dark-wellness-button: #0D9488;
+  --dark-wellness-button-hover: #0F766E;
 }
 
 * {
@@ -147,7 +154,7 @@ button:hover {
   gap: 1.5rem;
 }
 
-/* Dark mode styles */
+/* Dark mode styles - Improved contrast */
 .dark body {
   background-color: var(--dark-background);
   color: var(--dark-text-color);
@@ -162,11 +169,11 @@ button:hover {
 }
 
 .dark a {
-  color: var(--secondary-color);
+  color: var(--dark-secondary-color);
 }
 
 .dark a:hover {
-  color: var(--accent-color);
+  color: var(--dark-accent-color);
 }
 
 .dark .card {
@@ -175,12 +182,78 @@ button:hover {
 }
 
 .dark button {
-  background-color: var(--dark-card-background);
-  color: var(--dark-text-color);
+  background-color: var(--dark-primary-color);
+  color: var(--dark-background);
+  font-weight: 600;
 }
 
 .dark button:hover {
-  background-color: var(--dark-hover-color);
+  background-color: var(--dark-button-hover);
+  color: var(--dark-button-text);
+}
+
+/* Harmonisation des boutons principaux */
+.dark .wellness-btn,
+.dark .nav-btn {
+  background-color: var(--dark-primary-color);
+  color: var(--dark-background);
+}
+
+.dark .wellness-btn:hover,
+.dark .nav-btn:hover {
+  background-color: var(--dark-button-hover);
+  color: var(--dark-button-text);
+}
+
+.dark .logo h1 {
+  color: var(--dark-text-color);
+}
+
+.dark .nav-list a {
+  color: var(--dark-light-text);
+}
+
+.dark .nav-list a:hover {
+  color: var(--dark-text-color);
+}
+
+.dark .hamburger-line {
+  background-color: var(--dark-text-color);
+}
+
+.dark .mobile-menu-toggle {
+  color: var(--dark-text-color);
+}
+
+.dark .section-header h2 {
+  color: var(--dark-text-color);
+}
+
+.dark .section-header p {
+  color: var(--dark-light-text);
+}
+
+/* Correction du fond sombre pour toutes les sections */
+.dark .header,
+.dark #hero,
+.dark .features-section,
+.dark .testimonials-section,
+.dark .contact-section,
+.dark .professionals-section,
+.dark .wellness-center {
+  background-color: var(--dark-background);
+}
+
+/* Correction des contrastes pour les textes en mode sombre */
+.dark .hero-section h1,
+.dark .hero-section h2,
+.dark .hero-section h3,
+.dark .hero-section p {
+  color: var(--dark-text-color);
+}
+
+.dark .hero-section p {
+  color: var(--dark-light-text);
 }
 
 @media (max-width: 768px) {
@@ -190,5 +263,42 @@ button:hover {
   
   .grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Fix mobile layout issues */
+  .hero-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .hero-buttons button,
+  .hero-buttons a {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
   }
 }

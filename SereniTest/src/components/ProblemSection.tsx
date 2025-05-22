@@ -202,7 +202,6 @@ const ProblemSection: React.FC = () => {
             ref={illustrationRef}
             className="md:w-1/2 grid grid-cols-2 gap-6"
             style={{ x: textX }}
-            ref={ref}
           >
             {illustrations.map((item, index) => (
               <motion.div

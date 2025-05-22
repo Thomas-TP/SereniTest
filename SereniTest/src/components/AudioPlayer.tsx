@@ -17,12 +17,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   
+  // Mettre à jour le volume lorsqu'il change
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume / 100;
     }
   }, [volume]);
   
+  // Gérer la lecture/pause et arrêter complètement lorsque isPlaying devient false
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -31,12 +33,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         });
       } else {
         audioRef.current.pause();
+        // Réinitialiser la position de lecture à 0 pour un arrêt complet
+        audioRef.current.currentTime = 0;
       }
     }
-  }, [isPlaying, audioSrc]);
+  }, [isPlaying]);
 
+  // Recharger l'audio si la source change
   useEffect(() => {
-    // Recharger l'audio si la source change
     if (audioRef.current) {
       audioRef.current.load();
       if (isPlaying) {
@@ -45,7 +49,18 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         });
       }
     }
-  }, [audioSrc]);
+  }, [audioSrc, isPlaying]);
+
+  // Nettoyer l'audio lors du démontage du composant
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current.src = '';
+      }
+    };
+  }, []);
 
   return (
     <audio 
@@ -54,6 +69,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
       loop={loop}
       onEnded={onEnded}
       style={{ display: 'none' }} // Masquer l'élément audio
+      preload="auto"
     />
   );
 };

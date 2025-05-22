@@ -163,7 +163,7 @@ const HeroSection: React.FC = () => {
       particles.push(
         <div 
           key={i}
-          className="absolute rounded-full bg-primary-teal opacity-0"
+          className="absolute rounded-full bg-primary-teal opacity-0 dark:bg-blue-400"
           style={{
             width: `${Math.random() * 10 + 5}px`,
             height: `${Math.random() * 10 + 5}px`,
@@ -180,18 +180,18 @@ const HeroSection: React.FC = () => {
     <section 
       id="hero" 
       ref={sectionRef}
-      className="relative bg-gradient-to-r from-bg-gradient-start to-bg-gradient-end text-neutral-dark min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative bg-gradient-to-r from-bg-gradient-start to-bg-gradient-end text-neutral-dark min-h-screen flex items-center justify-center overflow-hidden dark:bg-gray-900 dark:text-white"
     >
       {/* Fond avec effet parallax */}
       <motion.div 
-        className="absolute inset-0 z-0" 
+        className="absolute inset-0 z-0 dark:bg-gray-900" 
         style={{ 
           y: backgroundY,
           opacity: backgroundOpacity
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/10 to-primary-purple/10 z-10"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSg3OSwxOTEsMTg1LDAuMDUpIi8+PC9wYXR0ZXJuPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/10 to-primary-purple/10 z-10 dark:from-blue-900/30 dark:to-indigo-900/30"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSg3OSwxOTEsMTg1LDAuMDUpIi8+PC9wYXR0ZXJuPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSg2NiwxNTMsMjI1LDAuMDUpIi8+PC9wYXR0ZXJuPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
       </motion.div>
       
       {/* Particules animées */}
@@ -218,7 +218,7 @@ const HeroSection: React.FC = () => {
       
       {/* Contenu principal avec animation au scroll */}
       <motion.div 
-        className="container mx-auto px-6 text-center relative z-10"
+        className="container mx-auto px-4 sm:px-6 text-center relative z-10 py-8 md:py-0"
         style={{ 
           opacity: textOpacity,
           y: textY
@@ -226,15 +226,15 @@ const HeroSection: React.FC = () => {
       >
         <motion.h1 
           ref={titleRef}
-          className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 gradient-text dark:text-white"
           initial={{ opacity: 0 }}
         >
-          Sereni<span className="text-primary-purple">Test</span>
+          Sereni<span className="text-primary-purple dark:text-blue-400">Test</span>
         </motion.h1>
         
         <motion.p 
           ref={subtitleRef}
-          className="text-xl md:text-2xl mb-8 text-neutral-dark"
+          className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-8 text-neutral-dark dark:text-gray-200"
           initial={{ opacity: 0 }}
         >
           Votre check-up mental quotidien en 5 minutes pour un esprit sain.
@@ -242,25 +242,27 @@ const HeroSection: React.FC = () => {
         
         <motion.p 
           ref={descriptionRef}
-          className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-neutral-dark"
+          className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-3xl mx-auto text-neutral-dark dark:text-gray-300"
           initial={{ opacity: 0 }}
         >
           SereniTest est une application mobile intelligente qui permet aux utilisateurs de faire un véritable check-up mental quotidien en seulement cinq minutes. En combinant intelligence artificielle, techniques de psychologie positive et données passives, elle fournit un tableau de bord personnel de l'état psychologique de l'utilisateur, avec des recommandations concrètes pour se sentir mieux, jour après jour.
         </motion.p>
         
-        <motion.a
-          ref={buttonRef}
-          href="#solution"
-          className="btn btn-primary inline-block"
-          initial={{ opacity: 0 }}
-          whileHover={{ 
-            scale: 1.05,
-            boxShadow: "0 10px 25px rgba(79, 191, 185, 0.4)"
-          }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Découvrez comment
-        </motion.a>
+        <motion.div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <motion.a
+            ref={buttonRef}
+            href="#solution"
+            className="btn btn-primary inline-block w-full sm:w-auto dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:text-white"
+            initial={{ opacity: 0 }}
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 10px 25px rgba(79, 191, 185, 0.4)"
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Découvrez comment
+          </motion.a>
+        </motion.div>
       </motion.div>
       
       {/* Indicateur de défilement */}
@@ -271,12 +273,12 @@ const HeroSection: React.FC = () => {
         transition={{ delay: 1.5, duration: 0.8 }}
       >
         <motion.div 
-          className="w-8 h-12 border-2 border-primary-teal rounded-full flex justify-center"
+          className="w-8 h-12 border-2 border-primary-teal rounded-full flex justify-center dark:border-blue-400"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
           <motion.div 
-            className="w-1.5 h-3 bg-primary-teal rounded-full mt-2"
+            className="w-1.5 h-3 bg-primary-teal rounded-full mt-2 dark:bg-blue-400"
             animate={{ y: [0, 15, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           />
