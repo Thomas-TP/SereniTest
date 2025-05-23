@@ -10,6 +10,8 @@ import MentalTest from './components/MentalTest'
 import Dashboard from './components/Dashboard'
 import WellnessCenter from './components/WellnessCenter'
 import ProfessionalSearch from './components/ProfessionalSearch'
+import ChatBubble from './components/ChatBubble' // Import ChatBubble
+import ChatWindow from './components/ChatWindow' // Import ChatWindow
 
 function App() {
   const [showTest, setShowTest] = useState(false)
@@ -17,6 +19,7 @@ function App() {
   const [showWellnessCenter, setShowWellnessCenter] = useState(false)
   const [showProfessionalSearch, setShowProfessionalSearch] = useState(false)
   const [testResults, setTestResults] = useState(null)
+  const [isChatOpen, setIsChatOpen] = useState(false) // State for chat window
 
   const handleTestComplete = (results) => {
     setTestResults(results)
@@ -37,6 +40,10 @@ function App() {
     setShowDashboard(false)
     setShowWellnessCenter(true)
     setShowProfessionalSearch(false)
+  }
+
+  const toggleChatWindow = () => {
+    setIsChatOpen(!isChatOpen);
   }
 
   return (
@@ -96,6 +103,9 @@ function App() {
         />
       )}
 
+    {/* Chat Components */}
+    <ChatBubble onClick={toggleChatWindow} />
+    <ChatWindow isOpen={isChatOpen} onClose={toggleChatWindow} />
       <Footer />
     </div>
   )
